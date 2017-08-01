@@ -4,6 +4,8 @@ const crypto = require('crypto');
 const encryption_key = process.env.ENCRYPTION_KEY;
 const iv_length = Number(process.env.IV_LENGTH);
 const algorithm = process.env.ALGORITHM;
+require('dotenv').config()
+
 
 function encrypt(text) {
  let iv = crypto.randomBytes(iv_length);
