@@ -139,7 +139,7 @@ module.exports = {
 			}
 		})
 		.then(responseFindById=>{
-			models.User.update({
+			models.User.updateAttributes({
 				name : req.body.name || responseFindById.dataValues.name,
 				username : req.body.username || responseFindById.dataValues.username,
 				email : req.body.email || responseFindById.dataValues.email,
@@ -193,6 +193,30 @@ module.exports = {
 				finalResult.message = "User can't updated";
 				res.json(finalResult);
 			})
+		})
+	},
+	deleteUser: (req, res)=>{
+		let finalResult = {
+			id:null,
+			success : false,
+			message : ''
+		}
+		models.Role.destroy({
+			where:{
+				id:req.params.id
+			}
+		})
+		.then(response=>{
+			finalResult.id = req.params.id;
+			finalResult.success = true;
+			finalResult.message = 'User has been Delete';
+			res.status(200);
+			res.json(finalResult);
+		})
+		.catch(err=>{
+			finalResult.message = "User can't deleted";
+			res.status(500);
+			res.json(finalResult);
 		})
 	}
 }

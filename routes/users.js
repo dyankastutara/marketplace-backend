@@ -8,5 +8,6 @@ router.get('/', authorizationHelper.accessSuperAdminAndAdmin, userController.get
 router.get('/:id', authorizationHelper.accessAll, userController.getById);
 router.post('/', authorizationHelper.accessSuperAdmin, userController.createUser);
 router.put('/:id', authorizationHelper.accessAll, userController.editUser);
+router.delete('/:id', authorizationHelper.accessAdmin, userController.deleteUser);
 
 module.exports = router;
