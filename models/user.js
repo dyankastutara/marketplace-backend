@@ -13,5 +13,9 @@ module.exports = function(sequelize, DataTypes) {
     postal_code: DataTypes.STRING,
     role_id: DataTypes.INTEGER
   });
+
+  User.associate = (models)=>{
+    User.belongsTo(models.Role, {foreignKey: 'role_id'})
+  }
   return User;
 };

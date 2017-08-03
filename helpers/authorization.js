@@ -28,6 +28,18 @@ module.exports = {
       })
     }
 	},
+  accessSuperAdminAndAdmin : (req, res, next)=>{
+    const token = req.headers.token;
+    const decoded = jwt.verify(token, process.env.SECRET_TOKEN)
+    if(decoded.role.toLowerCase() == 'superadmin' || decoded.role.toLowerCase() == 'admin'){
+      next()
+    }else{
+      res.json({
+        access : false,
+        message : "Access is denied"
+      })
+    }
+  },
 	accessAdmin : (req, res, next)=>{
 		const token = req.headers.token;
 		const decoded = jwt.verify(token, process.env.SECRET_TOKEN)
