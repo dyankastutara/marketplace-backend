@@ -234,3 +234,106 @@ http://localhost:3000/users
     "message": "New User is Created"
 }
 ```
+
+
+### Update User
+
+Role : All (SuperAdmin, Admin, User)
+
+#### Request
+
+```
+PUT
+```
+
+```
+http://localhost:3000/users/:id
+```
+
+```
+Ajax Settings :
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:3000/users/9",
+  "method": "PUT",
+  "headers": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6InN1cGVyYWRtaW4iLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJlbWFpbCI6InN1cGVyYWRtaW5AZW1haWwuY29tIiwidXJsSW1nIjoiaHR0cDovL2ltZy5jb20iLCJnZW5kZXIiOiJNYW4iLCJhZGRyZXNzIjoibm4iLCJjaXR5Ijoibm4iLCJwb3N0YWxfY29kZSI6IjEyMzQ1IiwiY3JlYXRlZEF0IjoiMjAxNy0wOC0wM1QxNzowNToyNS41NjRaIiwidXBkYXRlZEF0IjoiMjAxNy0wOC0wM1QxNzowNToyNS41NjRaIiwicm9sZSI6IlN1cGVyQWRtaW4iLCJpYXQiOjE1MDE3ODAwOTl9.R18h0Jj7PwqJLgYh_SgM908zTCHxrZUEQ9WeBlitO1Q",
+    "content-type": "application/json",
+    "cache-control": "no-cache",
+    "postman-token": "4a05dd32-b446-16f1-d45e-55cb46b5628e"
+  },
+  "processData": false,
+  "data": "{\n\t\"name\":\"nama 1\",\n\t\"email\":\"email5@email.com\",\n\t\"password\":\"password\",\n\t\"phone_number\":\"1234567890\",\n\t\"role_id\":2\n}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+#### Response
+
+```
+{
+    "id": 9,
+    "name": "",
+    "username": "email5",
+    "email": "email5@email.com",
+    "phone_number": "1234567890",
+    "urlImg": null,
+    "gender": null,
+    "address": null,
+    "city": null,
+    "postal_code": null,
+    "updatedAt": "2017-08-03T17:26:31.127Z",
+    "role": "Admin",
+    "success": true,
+    "message": "User has been updated"
+}
+```
+
+### Delete User
+
+Role : Admin
+
+#### Request
+
+```
+DELETE
+```
+
+```
+http://localhost:3000/users/:id
+```
+
+```
+AJAX Settings:
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:3000/users/9",
+  "method": "DELETE",
+  "headers": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6ImFkbWluMTIiLCJ1c2VybmFtZSI6ImFkbWluMTIiLCJlbWFpbCI6ImFkbWluMTJAZW1haWwuY29tIiwidXJsSW1nIjoiaHR0cDovL2ltZy5jb20iLCJnZW5kZXIiOiJNYW4iLCJhZGRyZXNzIjoibm4iLCJjaXR5Ijoibm4iLCJwb3N0YWxfY29kZSI6IjEyMzQ1IiwiY3JlYXRlZEF0IjoiMjAxNy0wOC0wM1QxNzowNToyNS41NjRaIiwidXBkYXRlZEF0IjoiMjAxNy0wOC0wM1QxNzowNToyNS41NjRaIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNTAxNzgxMzIwfQ.PaG-iy9unR-shAVZ44LZ14u6_j3LClDY8RerzR5czMw",
+    "cache-control": "no-cache",
+    "postman-token": "9bc1a22f-1c51-bd7f-fc28-c54b3e32e2e6"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+#### Response
+
+```
+{
+    "id": "9",
+    "success": true,
+    "message": "User has been Delete"
+}
+```

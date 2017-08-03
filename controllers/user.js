@@ -74,11 +74,11 @@ module.exports = {
 					    role_id: req.body.role_id
 						})
 						.then(response=>{
+							let role_id = response.dataValues.role_id
 							models.Role.findAll({})
 							.then(responseRole=>{
-								let role_id = response.dataValues.role_id
+								let role = ''
 								responseRole.map(valueRole=>{
-									var role = ''
 									if(role_id === valueRole.dataValues.id){
 										role = valueRole.dataValues.type
 										return role
@@ -139,7 +139,7 @@ module.exports = {
 			}
 		})
 		.then(responseFindById=>{
-			models.User.updateAttributes({
+			responseFindById.updateAttributes({
 				name : req.body.name || responseFindById.dataValues.name,
 				username : req.body.username || responseFindById.dataValues.username,
 				email : req.body.email || responseFindById.dataValues.email,
@@ -159,35 +159,35 @@ module.exports = {
 				}
 			})
 			.then(response=>{
-				var role = ''
-				let id_role = response.dataValues.id_role
+				let role_id = response.dataValues.role_id
 				models.Role.findAll({})
 				.then(responseRole=>{
+					var role = ''
 					responseRole.map(roleValue=>{
-						if(roleValue.dataValues.id === Number(id_role)){
+						if(roleValue.dataValues.id == role_id){
 							role = roleValue.dataValues.type
 							return role
 						}
 					})
+					finalResult.id = response.dataValues.id;
+					finalResult.username = response.dataValues.username;
+					finalResult.email = response.dataValues.email;
+					finalResult.phone_number = response.dataValues.phone_number;
+			    finalResult.urlImg = response.dataValues.urlImg;
+			    finalResult.gender = response.dataValues.gender;
+			    finalResult.address = response.dataValues.address;
+			    finalResult.city = response.dataValues.city;
+			    finalResult.postal_code = response.dataValues.postal_code;
+			    finalResult.updatedAt = response.dataValues.updatedAt;
+					finalResult.role = role;
+					finalResult.success = true;
+					finalResult.message = "User has been updated";
+					res.json(finalResult);
 				})
 				.catch(err=>{
 					finalResult.message = "Error find Role when update";
 					res.json(finalResult);
 				})
-				finalResult.id = response.dataValues.id;
-				finalResult.username = response.dataValues.username;
-				finalResult.email = response.dataValues.email;
-				finalResult.phone_number = response.dataValues.phone_number;
-		    finalResult.urlImg = response.dataValues.urlImg;
-		    finalResult.gender = response.dataValues.gender;
-		    finalResult.address = response.dataValues.address;
-		    finalResult.city = response.dataValues.city;
-		    finalResult.postal_code = response.dataValues.postal_code;
-		    finalResult.updatedAt = response.dataValues.updatedAt;
-				finalResult.role = role;
-				finalResult.success = true;
-				finalResult.message = "User has been updated";
-				res.json(finalResult);
 			})
 			.catch(error=>{
 				finalResult.message = "User can't updated";

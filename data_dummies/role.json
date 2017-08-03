@@ -1,5 +1,5 @@
 [
-	{"type":"SuperAdmin", "createdAt":"2017-05-04T19:43:48.271Z","updatedAt":"2017-05-04T19:43:48.271Z"},
-	{"type":"Admin", "createdAt":"2017-05-04T19:43:48.271Z","updatedAt":"2017-05-04T19:43:48.271Z"}, 
-	{"type":"User", "createdAt":"2017-05-04T19:43:48.271Z","updatedAt":"2017-05-04T19:43:48.271Z"}
+	{"id":"1","type":"SuperAdmin", "createdAt":"2017-05-04T19:43:48.271Z","updatedAt":"2017-05-04T19:43:48.271Z"},
+	{"id":"2","type":"Admin", "createdAt":"2017-05-04T19:43:48.271Z","updatedAt":"2017-05-04T19:43:48.271Z"}, 
+	{"id":"3","type":"User", "createdAt":"2017-05-04T19:43:48.271Z","updatedAt":"2017-05-04T19:43:48.271Z"}
 ]
