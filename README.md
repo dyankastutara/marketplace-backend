@@ -1,6 +1,14 @@
 # marketplace-backend
 Backend for marketplace with nodejs
 
+## How To Use API ?
+
+1. Clone from github
+2. npm install or yarn install
+3. sequelize db:migrate
+4. sequelize db:seed:all
+5. npm start or yarn start
+
 
 ## Auth
 
