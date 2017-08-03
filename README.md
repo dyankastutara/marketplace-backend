@@ -105,7 +105,7 @@ var settings = {
   "url": "http://localhost:3000/users",
   "method": "GET",
   "headers": {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsIm5hbWUiOiJEeWFuIEthc3R1dGFyYSIsInVzZXJuYW1lIjoiZHlhbmthc3R1dGFyYTE5MiIsImVtYWlsIjoiZHlhbmthc3R1dGFyYTE5MkBnbWFpbC5jb20iLCJ1cmxJbWciOm51bGwsImdlbmRlciI6bnVsbCwiYWRkcmVzcyI6bnVsbCwiY2l0eSI6bnVsbCwicG9zdGFsX2NvZGUiOm51bGwsImNyZWF0ZWRBdCI6IjIwMTctMDgtMDNUMTQ6NTk6MDYuODczWiIsInVwZGF0ZWRBdCI6IjIwMTctMDgtMDNUMTQ6NTk6MDYuODczWiIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNTAxNzczNTgzfQ.s1_FNvJ3YVVw84yJP--SJpd_fr254hgnyKjBFYpyQew",
+    "token": "token genarate alsjdlaslhskfhsdflsd",
     "cache-control": "no-cache",
     "postman-token": "f356f704-7353-bbcc-9e40-77c8a378d17c"
   }
