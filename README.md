@@ -10,6 +10,14 @@ Backend for marketplace with nodejs
 5. npm start or yarn start
 
 
+## Set Up .env
+
+1. ENCRYPTION_KEY=must be 32 character
+2. IV_LENGTH=16
+3. ALGORITHM=aes-256-cbc
+4. SECRET_TOKEN=tokensecret
+
+
 ## Auth
 
 ### Auth Register

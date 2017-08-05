@@ -1,5 +1,5 @@
 {
-  "name": "marketplace-backend",
+  "name": "gr-backend",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "jsonwebtoken": "^7.4.1",
     "mocha": "^3.5.0",
     "morgan": "~1.8.1",
+    "mysql2": "^1.4.0",
     "pg": "^7.0.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.4.2",

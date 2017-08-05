@@ -2,24 +2,24 @@ require('dotenv').config()
 
 module.exports = {
   "development": {
-    "username": "postgres",
+    "username": "root",
     "password": 12345,
     "database": "db_marketplace",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "test": {
-    "username": "postgres",
+    "username": "root",
     "password": 12345,
     "database": "db_marketplace_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "production": {
-    "username": "postgres",
+    "username": "root",
     "password": 12345,
-    "database": "db_marketplace_pro",
+    "database": "db_marketplace",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   }
 }
